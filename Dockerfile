@@ -10,7 +10,7 @@ RUN echo 'deb http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list &&
     # Add any other required packages here, e.g. php7.0-memcached
     apt-get update && apt-get install -y --force-yes git curl php7.1-fpm php7.1-cli \
             php7.1-common php7.1-mbstring php7.1-xml php7.1-bcmath \
-            mcrypt php7.1-mcrypt php7.1-curl gzip php7.1-mysql zip unzip php7.1-zip && \
+            mcrypt php7.1-mcrypt php7.1-curl gzip php7.1-mysql zip unzip php7.1-zip nano && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     curl -sS https://getcomposer.org/installer | php && \
