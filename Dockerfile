@@ -54,14 +54,19 @@ RUN chmod +x start.sh entrypoint.sh
 WORKDIR /var/www
 
 # Install dependency
-COPY composer.json ./
-RUN composer install --no-scripts --no-autoloader --prefer-dist --no-dev --working-dir=/var/www
+#COPY composer.json ./
+#RUN composer install --no-scripts --no-autoloader --prefer-dist --no-dev --working-dir=/var/www
 
 # Copy the app files
-COPY . /tmp/app
-RUN chmod -R ug+rwx /tmp/app && \
-    chown -R 1001:0 /tmp/app && \
-    cp -rpT /tmp/app /var/www && \
-    rm -rf /tmp/app && \
-    composer dump-autoload --optimize
+#COPY . /tmp/app
+#RUN chmod -R ug+rwx /tmp/app && \
+#    chown -R 1001:0 /tmp/app && \
+#    cp -rpT /tmp/app /var/www && \
+#    rm -rf /tmp/app && \
+#    composer dump-autoload --optimize
+
+
+echo "<?php phpinfo(); ?>" >> index.php
+
+
 USER 1001
