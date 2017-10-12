@@ -1,4 +1,4 @@
-ROM nginx:1.11
+FROM nginx:1.11
 
 RUN echo 'deb http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list && \
     echo 'deb-src http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list && \
