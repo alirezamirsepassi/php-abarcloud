@@ -65,8 +65,6 @@ WORKDIR /var/www
 #    rm -rf /tmp/app && \
 #    composer dump-autoload --optimize
 
-
-echo "<?php phpinfo(); ?>" >> index.php
-
+RUN echo "<?php phpinfo(); ?>" >> index.php
 
 USER 1001
