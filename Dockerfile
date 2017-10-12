@@ -65,6 +65,7 @@ WORKDIR /var/www
 #    rm -rf /tmp/app && \
 #    composer dump-autoload --optimize
 
-RUN echo "<?php phpinfo(); ?>" >> index.php
+RUN echo "<?php phpinfo(); ?>" >> public/index.php
+RUN chmod g+w public/index.php
 
 USER 1001
