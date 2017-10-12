@@ -51,7 +51,7 @@ COPY ./site.conf /etc/nginx/conf.d/default.conf
 COPY ./start.sh ./entrypoint.sh /
 RUN chmod +x start.sh entrypoint.sh
 
-WORKDIR /var/www
+WORKDIR /var/www/public
 
 # Install dependency
 #COPY composer.json ./
@@ -65,7 +65,7 @@ WORKDIR /var/www
 #    rm -rf /tmp/app && \
 #    composer dump-autoload --optimize
 
-RUN echo "<?php phpinfo(); ?>" >> public/index.php
-RUN chmod g+w public/index.php
+RUN echo "<?php phpinfo(); ?>" >> index.php
+RUN chmod g+w index.php
 
 USER 1001
