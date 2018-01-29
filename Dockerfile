@@ -3,7 +3,7 @@ FROM nginx:1.11
 RUN echo 'deb http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list && \
     echo 'deb-src http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list && \
     apt-get update -y && \
-    apt-get install -y apt-transport-https lsb-release ca-certificates wget curl && \
+    apt-get install -y apt-transport-https lsb-release ca-certificates wget curl mysql-client && \
     wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg && \
     echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list && \
     wget https://www.dotdeb.org/dotdeb.gpg && apt-key add dotdeb.gpg && \
